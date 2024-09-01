@@ -18,20 +18,21 @@ class Solution {
 public:
     vector<vector<int>> construct2DArray(vector<int>& original, int m, int n) 
     {
-        if(m*n!=original.size())
-            return vector<vector<int>>();
+        if(m*n!=original.size()) // if the size is not match then return empty vector
+            return {};
+
         vector<vector<int>> res (m, vector<int>(n, 0));
-        int index = 0;
+        int index = 0; // to keep track of index of original vector
 
         for(int i=0; i<m; i++)
         {
             for(int j=0; j<n; j++)
             {
-                res[i][j] = original[index];
+                res[i][j] = original[index]; // to pass the value
                 index++;
             }
         }
         
-        return res;
+        return res; 
     }
 };
